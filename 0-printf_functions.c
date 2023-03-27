@@ -96,6 +96,32 @@ int print_percent(va_list types, char buffer[], int flags, int width, int precis
 	  UNUSED(precision);
 	  UNUSED(size);
 	  UNUSED(types);
-
+	  
 	  return (write(1, "%%", 1));
 }
+
+/**
+ * print_int - print int
+ * @types: arg list
+ * @buffer: biffer array
+ * @flags: calculates active flags
+ * @width: gives width
+ * @precision: specifies precision
+ * @size: specifies size
+ *
+ * Return: printed chars amount
+ */
+int print_int(va_list types, char buffer[], int flags, int width, int precision, int size)
+{
+	int i = BUFF_SIZE - 2;
+	int is_negative = 0;
+	long int n = va_arg(types, long int);
+	unsigned long int num;
+
+	n = convert_size_number(n, size);
+
+	if (n == 0)
+	{
+		buffer[i--] = '0';
+	}
+
