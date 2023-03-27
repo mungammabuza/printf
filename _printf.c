@@ -16,15 +16,9 @@ int _printf(const char *format, ...)
 
 	if (format == NULL)
 		return (-1);
-<<<<<<< HEAD
-	}
-	va_start(list, format);
-
-=======
 
 	va_start(list, format);
 
->>>>>>> fd15727d994e047ebdbe89468bede8fb2feb867b
 	for (i = 0; format && format[i] != '\0'; i++)
 	{
 		if (format[i] != '%')
@@ -50,16 +44,9 @@ int _printf(const char *format, ...)
 			printed_chars += printed;
 		}
 	}
-<<<<<<< HEAD
-	print_buffer(buffer, &buff_ind);
-	va_end(list);
-=======
 
 	print_buffer(buffer, &buff_ind);
-
 	va_end(list);
-
->>>>>>> fd15727d994e047ebdbe89468bede8fb2feb867b
 	return (printed_chars);
 }
 
